@@ -1,0 +1,114 @@
+/* General styles */
+
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800'); */
+
+
+html{
+    font-family: Georgia, Times, 'Times New Roman', serif;
+
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+#txtbox{
+    padding: 15px;
+    width:70%;
+	margin: 5px;
+    border:none;
+    font-size:medium;
+    border: none;
+}
+#txtbox:focus{
+    outline: none;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size:large;
+    border-radius: 25px;
+    background-color: rgba(128, 0, 128, 0.459);
+    padding: 0px;
+    width:50%;
+    margin: 0 auto;
+
+}
+.registrar{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    width:40%;
+}
+/* #registrar1{
+    background-color: rgba(128, 0, 128, 0.459);
+}
+    */
+#registrar2 p{
+    /* background-color: rgb(128, 0, 128); */
+    font-size:x-large;
+
+}
+.signIn_button, .signUp_button{
+    text-align: center;
+    padding: 20px;
+    max-width:120px;
+    margin:auto;
+    border-radius: 30px;
+    margin-bottom: 25px;
+    text-align:center;
+    text-decoration: none;
+    border: none;
+}
+.signIn_button{
+    background-color:rgba(95, 0, 95, 0.733);
+    color: #fff;
+    font-size: large;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+
+}
+.signIn_button:hover{
+    background-color: rgb(95, 0, 95);
+}
+.signUp_button{
+    background-color: #b4abff;
+    color: #333;
+    text-decoration: none;
+}
+.signUp_button:hover{
+    background-color: #5c4aff;
+    color:rgba(255, 255, 255, 0.795);
+}
+
+
+
+
+.registrar #link:hover{
+    text-decoration: underline;
+}
+
+
+.registrar #link{
+    color: #333;
+    text-decoration: none;
+}
