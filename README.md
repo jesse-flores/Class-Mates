@@ -3,7 +3,7 @@ Team name: Conquistadors<br/>
 Team members & Contributions: <br/>
 Dagbegnon Amouzou: Worked on the back-end function of storing data gained from the survey in a database.<br/>
 Carlos Tierra: Debugging Front-End Functionality as well as learning Back-End such as Javascript & SQL. <br/>
-Jesse Flores: <br/>
+Jesse Flores: Primarily worked on web development involving html, css, and javascript as well as overall team management and coordination of the project.<br/>
 Ariadne Colina Valeri: I came up with the idea and organized the presentation. Worked on html slightly.<br/>
 Geneva Chung: Worked on page to page transitions and other front end detailing.<br/>
 <br/>
