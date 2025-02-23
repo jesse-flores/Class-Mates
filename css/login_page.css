@@ -5,12 +5,12 @@ html{
 body {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: Navy;
 }
 
 /* Header styles */
 header {
-    background-color: #333;
+    background-color: Purple;
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -76,14 +76,14 @@ header h1 {
     border: none;
 }
 .signIn_button{
-    background-color:rgba(95, 0, 95, 0.733);
+    background-color: RebeccaPurple;
     color: #fff;
     font-size: large;
     font-family: Georgia, Times, 'Times New Roman', serif;
 
 }
 .signIn_button:hover{
-    background-color: rgb(95, 0, 95);
+    background-color: Purple;
 }
 .signUp_button{
     background-color: #b4abff;
@@ -91,7 +91,7 @@ header h1 {
     text-decoration: none;
 }
 .signUp_button:hover{
-    background-color: #5c4aff;
+    background-color: RebeccaPurple;
     color:rgba(255, 255, 255, 0.795);
 }
 
