@@ -1,0 +1,32 @@
+html{
+    font-family: Georgia, Times, 'Times New Roman', serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow: hidden;
+}
+.container{
+    margin:0 auto;
+    width: 100%;
+    text-align:center;
+    padding-top: 75px;
+    height: 100vh;
+    font-size:xx-large;
+    /* background-image: url("https://asegrad.tufts.edu/sites/g/files/lrezom691/files/styles/embedded_large/public/2024-04/231213%2010093%20medford%20last%20day%20of%20class014%20%282%29.JPG?itok=K5jdGiBb"); */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://asegrad.tufts.edu/sites/g/files/lrezom691/files/styles/embedded_large/public/2024-04/231213%2010093%20medford%20last%20day%20of%20class014%20%282%29.JPG?itok=K5jdGiBb');
+    background-size: cover;
+    color: white;
+}
+.about_us{
+    width:50%;
+    margin: 0 auto;
+}
+#pic{
+    width: 150px;
+}
+table{
+    border-collapse: collapse;
+    margin: 0 auto;
+}
