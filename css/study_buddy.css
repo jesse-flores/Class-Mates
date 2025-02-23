@@ -77,3 +77,14 @@ table{
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+
+iframe{
+  width:40%;
+  height:450px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 10px solid #ccc;
+  transform: translateX(+70%);
+}
