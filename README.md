@@ -5,7 +5,7 @@ Dagbegnon Amouzou: Worked on the back-end function of storing data gained from t
 Carlos Tierra: Debugging Front-End Functionality as well as learning Back-End such as Javascript & SQL. 
 Jesse Flores: 
 Ariadne Colina Valeri: I came up with the idea and organized the presentation. Worked on html slightly.
-Geneva Chung: 
+Geneva Chung: Worked on page to page transitions and other front end detailing.
 
 Goal: Our goal was to create a website that would help students find study partners in larger classess. We chose this project because we realized that, especially in higher level classes, its often hard to find someone to work and study with in the subject. Over the weekend we were able to get a working website with some missing functionality.
 
