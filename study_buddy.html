@@ -1,119 +1,96 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Study Buddy</title>
-        <link rel="stylesheet" type="text/css" href="study_buddy.css">
-        <!-- <script src="js/study_buddy.js"></script> -->
-    </head>
-    <body>
-        <div class="container">
-            <div>
-                <h1>Study Buddy</h1>
-                <p>Find a study buddy that matches your study habits!</p>
-                
-                <!--DROPDOWN-->
-                <div class="dropdown">
-                    <input type="text" class="dropdown-input" placeholder="Search a class...">
-                    <div class="dropdown-list ">
-                      <div class="category">Calc 3</div>
-                      <div class="category">CS11</div>
-                      <div class="category">Diff Eq</div>
-                      <div class="category">Physics 12</div>
-                      <div class="category">War and Terrorism</div>
-                    </div>
-                  </div>
-                <!--DROPDOWN-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="study_buddy.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Class Mate</h1>
+            <p>Find a study buddy that matches your study habits!</p>
 
-            </div>
+            <table>
+                <tr>
+                    <td width="75%"><!-- DROPDOWN -->
+                        <div class="dropdown">
+                            <input type="text" class="dropdown-input" placeholder="Search a class...">
+                            <div class="dropdown-list">
+                                <div class="category">Bridge to Higher Mathematics</div>
+                                <div class="category">Calc 1</div>
+                                <div class="category">Calc 3 </div>
+                                <div class="category">CS11</div>
+                                <div class="category">Differential Equations</div>
+                                <div class="category">Discrete Math</div>
+                                <div class="category">EN1</div>
+                                <div class="category">Intro to Econometrics</div>
+                                <div class="category">Physics 12</div>
+                                <div class="category">Physic 13</div>
+                                <div class="category">Intro to Psychology</div>
+                                <div></div>
+                                <div class="category">War and Terrorism</div>
+                            </div>
+                        </div>
+                        <!-- DROPDOWN -->
+                    </td>
+                    <td width="25%">
+                        <select name="request" id="help" class="dropdwn2">
+                            <option value="help">Course Help</option>
+                            <option value="quiet">Quiet Study</option>
+                            <option value="group">Group Study</option>
+                          </select>
+                    </td>
+                </tr>
+            </table>
         </div>
+    </div>
 
-<!--ADD IN YOUR JS HERE-->
-<script src="https://code.jquery.com/jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-    const input = $(".dropdown-input");
-    const list = $(".dropdown-list");
-    const categories = $(".category");
-    const items = $(".dropdown-item");
-  
-    input.on("focus", function (e) {
-      $(e.currentTarget).siblings(".dropdown-list").css("display", "block");
-      console.log($(e.currentTarget).siblings(".dropdown-list"));
-    });
-  
-    input.on("input", function () {
-      const searchText = input.val().toLowerCase();
-  
-      categories.each(function (index) {
-        const categoryItemsList = categoryItems.eq(index);
-        const categoryText = $(this).text().toLowerCase();
-        let categoryVisible = false;
-  
-        const itemsToShow = [];
-  
-        categoryItemsList.find(".dropdown-item").each(function () {
-          const itemText = $(this).text().toLowerCase();
-          if (itemText.includes(searchText)) {
-            $(this).css("display", "block");
-            itemsToShow.push($(this));
-            categoryVisible = true;
-          } else {
-            $(this).css("display", "none");
-          }
-        });
-  
-        if (categoryText.includes(searchText) || categoryVisible) {
-          categoryItemsList.css("display", "block");
-          $(this).css("display", "block");
-  
-          if (categoryText.includes(searchText)) {
-            categoryItemsList.find(".dropdown-item").css("display", "block");
-          } else if (itemsToShow.length > 0) {
-            itemsToShow.forEach(function (item) {
-              item.css("display", "block");
+    <!-- JavaScript for dropdown behavior -->
+    <script>
+        $(document).ready(function () {
+            const input = $(".dropdown-input");
+            const list = $(".dropdown-list");
+            const categories = $(".category");
+
+            input.on("focus", function () {
+                // Show the dropdown list when input is focused
+                list.show();
             });
-          }
-        } else {
-          categoryItemsList.css("display", "none");
-          $(this).css("display", "none");
-        }
-      });
-  
-      list.css(
-        "display",
-        categories.toArray().some(function (category) {
-          return $(category).css("display") === "block";
-        })
-          ? "block"
-          : "none"
-      );
-    });
-  
-    categories.on("click", function (event) {
-      const index = categories.index(this);
-      const categoryItemsList = categoryItems.eq(index);
-      if (categoryItemsList.css("display") === "none") {
-        categoryItemsList.css("display", "block");
-      } else {
-        categoryItemsList.css("display", "none");
-      }
-      event.stopPropagation();
-    });
-  
-    items.on("click", function () {
-      input.val($(this).text());
-      list.css("display", "none");
-    });
-  
-    $(document).on("click", function (event) {
-      if (!input.is(event.target) && input.has(event.target).length === 0) {
-        list.css("display", "none");
-      }
-    });
-  });
-  
-</script>
 
+            input.on("input", function () {
+                const searchText = input.val().toLowerCase();
 
-    </body>
+                categories.each(function () {
+                    const categoryText = $(this).text().toLowerCase();
+                    // Show or hide categories based on search text
+                    if (categoryText.includes(searchText)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+
+                // Toggle visibility of the dropdown list based on category visibility
+                const anyCategoryVisible = categories.filter(":visible").length > 0;
+                list.toggle(anyCategoryVisible);
+            });
+
+            categories.on("click", function () {
+                // When a category is clicked, set it as the input value and hide the dropdown list
+                input.val($(this).text());
+                list.hide();
+            });
+
+            $(document).on("click", function (event) {
+                // Hide the dropdown list if clicking outside the input or dropdown
+                if (!input.is(event.target) && input.has(event.target).length === 0) {
+                    list.hide();
+                }
+            });
+        });
+    </script>
+</body>
 </html>

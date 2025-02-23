@@ -1,12 +1,128 @@
-<!--https://codepen.io/chef_digital/pen/xXvNbV-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
-    <link rel="stylesheet" type="text/css" href="form.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            color: #4CAF50;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        .form-section label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-section input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .form-section input[type="checkbox"] {
+            width: auto;
+        }
+
+        .survey {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .survey input {
+            margin-left: 20px;
+        }
+
+        .class-entry {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            display: none;
+            animation: slideIn 0.3s ease-out forwards;
+        }
+
+        .class-entry.active {
+            display: block;
+        }
+
+        .add-class-btn, .remove-class-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .remove-class-btn {
+            background-color: #f44336;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            height: 8px;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            width: 0;
+            height: 100%;
+            background-color: #4CAF50;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .success {
+            color: green;
+            font-size: 0.9em;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -24,13 +140,9 @@
             <input type="text" id="last-name" name="last_name" required>
         </div>
         <div class="form-section">
-            <label for="email">Student Email Address (@tufts.edu)</label>
+            <label for="email">Email Address (@tufts.edu)</label>
             <input type="email" id="email" name="email" pattern="^[a-zA-Z0-9._%+-]+@tufts\.edu$" required>
-
-
-            <label for="email">Personal Email Address</label>
-            <input type="email" id="email" name="email" required>
-            <small class="error" id="email-error" style="display:none;">Please enter a valid email address.</small>
+            <small class="error" id="email-error" style="display:none;">Please enter a valid Tufts email address.</small>
         </div>
         <div class="form-section">
             <label for="password">Password</label>
@@ -48,7 +160,7 @@
 
         <!-- Dynamic Classes Section -->
         <div class="form-section">
-            <button type="button" class="add-class-btn" id="add-class">+ Add Class</button> <br/>
+            <button type="button" class="add-class-btn" id="add-class">+ Add Class</button>
             <div id="class-section"></div>
         </div>
 
@@ -61,10 +173,6 @@
     </form>
 </div>
 
-
-
-
-
 <script>
     // Add class functionality
     document.getElementById('add-class').addEventListener('click', function() {
@@ -74,25 +182,14 @@
         classEntry.innerHTML = `
             <input type="text" name="class_name[]" placeholder="Class Name" required>
             <div class="survey">
-                <label class="checklist">Where can you aid others?</label>
-                
-                <input class="checklist" type="checkbox" id="help_options_course_help" value="course_help">
-                <label id="option" for="help_options_course_help">Course help</label>
-
-                <input class="checklist" type="checkbox" id="help_options_quiet_study" value="quiet_study">
-                <label id="option" for="help_options_quiet_study">Quiet Study</label>
-
-                <input class="checklist" type="checkbox" id="help_options_group_study" value="group_study">
-                <label id="option" for="help_options_group_study">Group study</label>
-
+                <label>Where can you aid others?</label>
+                <input type="checkbox" name="help_options[]" value="course_help"> Course help
+                <input type="checkbox" name="help_options[]" value="quiet_study"> Quiet study
+                <input type="checkbox" name="help_options[]" value="group_study"> Group study
             </div>
-            <br/>
             <button type="button" class="remove-class-btn">- Remove Class</button>
         `;
         classSection.appendChild(classEntry);
-
-
-        /*benlondon@gmail.com*/
 
         // Add remove class functionality
         classEntry.querySelector('.remove-class-btn').addEventListener('click', function() {
@@ -136,10 +233,6 @@
         document.getElementById('progress').style.width = '100%';
     });
 </script>
-
-
-
-
 
 </body>
 </html>
