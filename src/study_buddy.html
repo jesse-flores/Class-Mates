@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/study_buddy.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Class Mates</h1>
+            <p>Find a study buddy that matches your study habits!</p>
+
+            <table>
+                <tr>
+                    <td width="75%"><!-- DROPDOWN -->
+                        <div class="dropdown">
+                            <input type="text" class="dropdown-input" placeholder="Search a class...">
+                            <div class="dropdown-list">
+                                <div class="category">Bridge to Higher Mathematics</div>
+                                <div class="category">Calc 1</div>
+                                <div class="category">Calc 3 </div>
+                                <div class="category">CS11</div>
+                                <div class="category">Differential Equations</div>
+                                <div class="category">Discrete Math</div>
+                                <div class="category">EN1</div>
+                                <div class="category">Intro to Econometrics</div>
+                                <div class="category">Physics 12</div>
+                                <div class="category">Physic 13</div>
+                                <div class="category">Intro to Psychology</div>
+                                <div></div>
+                                <div class="category">War and Terrorism</div>
+                            </div>
+                        </div>
+                        <!-- DROPDOWN -->
+                    </td>
+                    <td width="25%">
+                        <select name="request" id="help" class="dropdwn2">
+                            <option value="help">Course Help</option>
+                            <option value="quiet">Quiet Study</option>
+                            <option value="group">Group Study</option>
+                          </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- JavaScript for dropdown behavior -->
+    <script>
+        $(document).ready(function () {
+            const input = $(".dropdown-input");
+            const list = $(".dropdown-list");
+            const categories = $(".category");
+
+            input.on("focus", function () {
+                // Show the dropdown list when input is focused
+                list.show();
+            });
+
+            input.on("input", function () {
+                const searchText = input.val().toLowerCase();
+
+                categories.each(function () {
+                    const categoryText = $(this).text().toLowerCase();
+                    // Show or hide categories based on search text
+                    if (categoryText.includes(searchText)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+
+                // Toggle visibility of the dropdown list based on category visibility
+                const anyCategoryVisible = categories.filter(":visible").length > 0;
+                list.toggle(anyCategoryVisible);
+            });
+
+            categories.on("click", function () {
+                // When a category is clicked, set it as the input value and hide the dropdown list
+                input.val($(this).text());
+                list.hide();
+            });
+
+            $(document).on("click", function (event) {
+                // Hide the dropdown list if clicking outside the input or dropdown
+                if (!input.is(event.target) && input.has(event.target).length === 0) {
+                    list.hide();
+                }
+            });
+        });
+    </script>
+
+
+
+<iframe
+src="../profiles/1.html"
+name="profiles"
+allowTransparency="true"
+scrolling="yes"
+frameborder="0"
+>
+</iframe>
+
+
+</body>
+</html>

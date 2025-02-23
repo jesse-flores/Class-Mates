@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Registration Form</h1>
+    <form id="registration-form">
+
+        <!-- Personal Information Section -->
+        <div class="form-section">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first_name" required>
+        </div>
+        <div class="form-section">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last_name" required>
+        </div>
+        <div class="form-section">
+            <label for="email">Student Email Address (@tufts.edu)</label>
+            <input type="email" id="email" name="email" pattern="^[a-zA-Z0-9._%+-]+@tufts\.edu$" required>
+
+
+            <label for="email">Personal Email Address</label>
+            <input type="email" id="email" name="email" required>
+            <small class="error" id="email-error" style="display:none;">Please enter a valid email address.</small>
+        </div>
+        <div class="form-section">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-section">
+            <label for="repeat-password">Repeat Password</label>
+            <input type="password" id="repeat-password" name="repeat_password" required>
+            <small class="error" id="password-error" style="display:none;">Passwords do not match.</small>
+        </div>
+        <div class="form-section">
+            <label for="instagram">Instagram Handle (Optional)</label>
+            <input type="text" id="instagram" name="instagram">
+        </div>
+
+        <!-- Dynamic Classes Section -->
+        <div class="form-section">
+            <button type="button" class="add-class-btn" id="add-class">+ Add Class</button> <br/>
+            <div id="class-section"></div>
+        </div>
+
+        <!-- Submit Section -->
+        <button type="submit" class="add-class-btn">Submit</button>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <p class="success" id="form-success" style="display:none;">Form submitted successfully!</p>
+    </form>
+</div>
+
+
+
+
+
+<script>
+    // Add class functionality
+    document.getElementById('add-class').addEventListener('click', function() {
+        const classSection = document.getElementById('class-section');
+        const classEntry = document.createElement('div');
+        classEntry.classList.add('class-entry');
+        classEntry.innerHTML = `
+            <input type="text" name="class_name[]" placeholder="Class Name" required>
+            <div class="survey">
+                <label class="checklist">Where can you aid others?</label>
+                
+                <input class="checklist" type="checkbox" id="help_options_course_help" value="course_help">
+                <label id="option" for="help_options_course_help">Course help</label>
+
+                <input class="checklist" type="checkbox" id="help_options_quiet_study" value="quiet_study">
+                <label id="option" for="help_options_quiet_study">Quiet Study</label>
+
+                <input class="checklist" type="checkbox" id="help_options_group_study" value="group_study">
+                <label id="option" for="help_options_group_study">Group study</label>
+
+            </div>
+            <br/>
+            <button type="button" class="remove-class-btn">- Remove Class</button>
+        `;
+        classSection.appendChild(classEntry);
+
+
+        /*benlondon@gmail.com*/
+
+        // Add remove class functionality
+        classEntry.querySelector('.remove-class-btn').addEventListener('click', function() {
+            classEntry.remove();
+        });
+
+        // Animate class entry
+        classEntry.classList.add('active');
+    });
+
+    // Form submission and validation
+    document.getElementById('registration-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const repeatPassword = document.getElementById('repeat-password');
+
+        // Validate email
+        if (!email.value.match(/^[a-zA-Z0-9._%+-]+@tufts\.edu$/)) {
+            document.getElementById('email-error').style.display = 'block';
+            return;
+        } else {
+            document.getElementById('email-error').style.display = 'none';
+        }
+
+        // Validate passwords
+        if (password.value !== repeatPassword.value) {
+            document.getElementById('password-error').style.display = 'block';
+            return;
+        } else {
+            document.getElementById('password-error').style.display = 'none';
+        }
+
+        // Simulate form submission success
+        document.getElementById('form-success').style.display = 'block';
+        setTimeout(function() {
+            document.getElementById('form-success').style.display = 'none';
+        }, 3000);
+
+        // Update progress bar
+        document.getElementById('progress').style.width = '100%';
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

@@ -3,7 +3,7 @@ Team name: Conquistadors<br/>
 Team members & Contributions: <br/>
 Dagbegnon Amouzou: Worked on the back-end function of storing data gained from the survey in a database.<br/>
 Carlos Tierra: Debugging Front-End Functionality as well as learning Back-End such as Javascript & SQL. <br/>
-Jesse Flores: Primarily worked on web development involving HTML, CSS, and JavaScript as well as overall team management and coordination of the project.<br/>
+Jesse Flores: <br/>
 Ariadne Colina Valeri: I came up with the idea and organized the presentation. Worked on html slightly.<br/>
 Geneva Chung: Worked on page to page transitions and other front end detailing.<br/>
 <br/>
@@ -13,7 +13,7 @@ Acknowledgments: This is made possible by ChatGPT<br/>
 <br/>
 What motivated your team to choose this project? Are there bigger ideas or features for the project that you’d want to implement in the future?<br/>
 <br/>
-We chose this project because we realized in larger classes it is difficult to find someone to study or work with. As group work is something that many people benifit from, we wanted to make a solution for it. An additional feature that we want to add is a point system that uses and builds off of the dining hall point and reward system to encourage more collaboration.<br/>
+We chose this project because we realized in larger classes it is difficult to find someone to study or work with. As group work is something that many people    benefit from, we wanted to make a solution for it. An additional feature that we want to add is a point system that uses and builds off of the dining hall         point and reward system to encourage more collaboration.<br/>
 <br/>
 Tell us about a tricky bug and/or design challenge that you encountered. How did your team tackle it together?<br/>
 <br/>
