@@ -29,19 +29,67 @@
 <h2>Choose Your Roles</h2>
 
 <form id="roleForm">
-    <h3> How can you aid:</h3>
+    <h3>Activity Preferences</h3>
     <div class="checkbox-group">
         <label>
-            <input type="checkbox" name="role" value="admin">
+            <input type="checkbox" name="role" value="quiet_study">
             Quiet study
         </label>
         <label>
-            <input type="checkbox" name="role" value="viewer">
-            Want to help
+            <input type="checkbox" name="role" value="group_study">
+            Group study
         </label>
         <label>
-            <input type="checkbox" name="role" value="moderator">
-            Group study
+            <input type="checkbox" name="role" value="one_on_one">
+            One-on-one
+        </label>
+    </div>
+
+    <h3>Personality Traits</h3>
+    <div class="checkbox-group">
+        <label>
+            <input type="checkbox" name="role" value="introverted">
+            Introverted
+        </label>
+        <label>
+            <input type="checkbox" name="role" value="extroverted">
+            Extroverted
+        </label>
+        <label>
+            <input type="checkbox" name="role" value="balanced">
+            Balanced
+        </label>
+    </div>
+
+    <h3>Skills & Interests</h3>
+    <div class="checkbox-group">
+        <label>
+            <input type="checkbox" name="role" value="programming">
+            Programming
+        </label>
+        <label>
+            <input type="checkbox" name="role" value="design">
+            Design
+        </label>
+        <label>
+            <input type="checkbox" name="role" value="writing">
+            Writing
+        </label>
+    </div>
+
+    <h3>Goals</h3>
+    <div class="checkbox-group">
+        <label>
+            <input type="checkbox" name="role" value="personal_growth">
+            Personal growth
+        </label>
+        <label>
+            <input type="checkbox" name="role" value="professional_growth">
+            Professional growth
+        </label>
+        <label>
+            <input type="checkbox" name="role" value="learning">
+            Learning
         </label>
     </div>
 
@@ -64,8 +112,14 @@
             selectedRoles.push(checkbox.value);
         });
 
+        // Check if any roles were selected
+        if (selectedRoles.length === 0) {
+            document.getElementById('result').innerText = 'Please select at least one role.';
+            return;
+        }
+
         // Send data to the server using fetch
-        fetch('/submit-roles', {
+        fetch('http://localhost:3000/submit-roles', {  // Make sure this URL is correct
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
