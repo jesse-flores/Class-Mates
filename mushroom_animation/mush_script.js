@@ -21,15 +21,5 @@ function createMushroom() {
 
 // Event listener for the button click
 startButton.addEventListener('click', () => {
-    let counter = 0;
-    const totalMushrooms = 50; // Total mushrooms to create (you can adjust this number)
-
-    const intervalId = setInterval(() => {
-        if (counter >= totalMushrooms) { // Stop after creating the specified number of mushrooms
-            clearInterval(intervalId);
-        } else {
-            createMushroom();
-            counter++;
-        }
-    }, 50); // Create mushrooms every 50ms 
+    setInterval(createMushroom, 100); // Create mushrooms every 300ms
 });
