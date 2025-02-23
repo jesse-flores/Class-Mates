@@ -1,0 +1,69 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Container for the clock */
+#clockContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+/* Styling for the clock */
+#clock {
+    position: absolute;
+    width: auto;
+    height: 150px; /* Initial height of the clock */
+    opacity: 0; /* Hide initially */
+    transition: opacity .5s; /* Smooth fade-in transition */
+}
+
+#clock img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Clock growth animation */
+@keyframes growClock {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    1% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(8);
+        opacity: 1;
+    }
+}
