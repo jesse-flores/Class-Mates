@@ -4,7 +4,7 @@ Team members & Contributions:
 Dagbegnon Amouzou: Worked on the back-end function of storing data gained from the survey in a database.
 Carlos Tierra: Debugging Front-End Functionality as well as learning Back-End such as Javascript & SQL. 
 Jesse Flores: 
-Ariadne Colina Valeri: 
+Ariadne Colina Valeri: I came up with the idea and organized the presentation. Worked on html slightly.
 Geneva Chung: 
 
 Goal: Our goal was to create a website that would help students find study partners in larger classess. We chose this project because we realized that, especially in higher level classes, its often hard to find someone to work and study with in the subject. Over the weekend we were able to get a working website with some missing functionality.
