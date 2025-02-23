@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role Checklist with JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .checkbox-group {
+            margin: 15px 0;
+        }
+        label {
+            margin-right: 15px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Choose Your Roles</h2>
+
+<form id="roleForm">
+    <h3> How can you aid:</h3>
+    <div class="checkbox-group">
+        <label>
+            <input type="checkbox" name="role" value="admin">
+            Quiet study
+        </label>
+        <label>
+            <input type="checkbox" name="role" value="viewer">
+            Want to help
+        </label>
+        <label>
+            <input type="checkbox" name="role" value="moderator">
+            Group study
+        </label>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<p class="result" id="result"></p>
+
+<script>
+    // Function to handle form submission
+    document.getElementById('roleForm').addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent page refresh on form submission
+
+        // Get all checked checkboxes
+        let checkboxes = document.querySelectorAll('input[name="role"]:checked');
+        
+        // Collect the values of checked checkboxes
+        let selectedRoles = [];
+        checkboxes.forEach(function(checkbox) {
+            selectedRoles.push(checkbox.value);
+        });
+
+        // Send data to the server using fetch
+        fetch('/submit-roles', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ roles: selectedRoles })
+        })
+        .then(response => response.json())
+        .then(data => {
+            let result = document.getElementById("result");
+            if (data.success) {
+                result.innerText = "Roles stored successfully!";
+            } else {
+                result.innerText = "There was an error storing your roles.";
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            document.getElementById("result").innerText = "An error occurred.";
+        });
+    });
+</script>
+
+</body>
+</html>
