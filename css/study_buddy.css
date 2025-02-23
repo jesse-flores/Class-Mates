@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   color: Navy;
+  background-color: rgb(198, 198, 250);
 }
 
 .container {
@@ -85,6 +86,17 @@ iframe{
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 4px;
-  border: 10px solid #ccc;
-  transform: translateX(+70%);
+  border: 10px solid plum;
+  transform: translateX(+20%);
+}
+
+.profile{
+  width: 40%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 10px solid plum;
+  transform: translateX(+60%);
+  background-color: slateblue;
+  color:white;
 }
