@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Overgrowth</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            overflow-x: hidden;
+            background-color: #f0f8ff;
+        }
+        .content {
+            height: 200vh; /* Make content tall enough to allow scrolling */
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #4a7c10;
+        }
+        .mushroom {
+            position: absolute;
+            bottom: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        /* Mushroom sizes and positions */
+        .mushroom img {
+            width: 50px;
+            height: auto;
+        }
+        /* Mushroom animation (can adjust for your preference) */
+        .mushroom.growing img {
+            width: 100px;
+        }
+
+        /* Mushroom styling */
+        .mushroom1 {
+            left: 10%;
+        }
+        .mushroom2 {
+            left: 20%;
+        }
+        .mushroom3 {
+            left: 30%;
+        }
+        .mushroom4 {
+            left: 40%;
+        }
+        .mushroom5 {
+            left: 50%;
+        }
+        .mushroom6 {
+            left: 60%;
+        }
+        .mushroom7 {
+            left: 70%;
+        }
+        .mushroom8 {
+            left: 80%;
+        }
+        .mushroom9 {
+            left: 90%;
+        }
+
+        /* Style for the scrollable content area */
+        .scroll-section {
+            padding: 20px;
+            margin-top: 50px;
+        }
+        .scroll-section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Mushroom Overgrowth</h1>
+    <div class="scroll-section">
+        <p>Scroll down the page to see the mushrooms grow along the side!</p>
+        <p>As you scroll down, mushrooms will grow bigger and more abundant. Keep going!</p>
+        <p>Enjoy the fun visual effect!</p>
+        <p>This is a playful interaction with scrolling to create a sense of overgrowth.</p>
+    </div>
+
+    <div class="mushroom mushroom1">
+        <img src="https://www.google.com/imgres?q=transparent%20background%20amanita%20mushroom%20top-down&imgurl=https%3A%2F%2Fimages.rawpixel.com%2Fimage_png_800%2FcHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZyZmx5X2FnYXJpY19tdXNocm9vbV9yZWRfMy1pbWFnZS1qb2I4NzUtMDFfMS5wbmc.png&imgrefurl=https%3A%2F%2Fwww.rawpixel.com%2Fsearch%2Famanita%2520muscaria&docid=8Gp8ey2AITqBqM&tbnid=P75f-aFoB7LHnM&vet=12ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA..i&w=800&h=1000&hcb=2&ved=2ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA" alt="Mushroom">
+    </div>
+    <div class="mushroom mushroom2">
+        <img src="https://www.google.com/imgres?q=transparent%20background%20amanita%20mushroom%20top-down&imgurl=https%3A%2F%2Fimages.rawpixel.com%2Fimage_png_800%2FcHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZyZmx5X2FnYXJpY19tdXNocm9vbV9yZWRfMy1pbWFnZS1qb2I4NzUtMDFfMS5wbmc.png&imgrefurl=https%3A%2F%2Fwww.rawpixel.com%2Fsearch%2Famanita%2520muscaria&docid=8Gp8ey2AITqBqM&tbnid=P75f-aFoB7LHnM&vet=12ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA..i&w=800&h=1000&hcb=2&ved=2ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA" alt="Mushroom">
+    </div>
+    <div class="mushroom mushroom3">
+        <img src="https://www.google.com/imgres?q=transparent%20background%20amanita%20mushroom%20top-down&imgurl=https%3A%2F%2Fimages.rawpixel.com%2Fimage_png_800%2FcHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZyZmx5X2FnYXJpY19tdXNocm9vbV9yZWRfMy1pbWFnZS1qb2I4NzUtMDFfMS5wbmc.png&imgrefurl=https%3A%2F%2Fwww.rawpixel.com%2Fsearch%2Famanita%2520muscaria&docid=8Gp8ey2AITqBqM&tbnid=P75f-aFoB7LHnM&vet=12ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA..i&w=800&h=1000&hcb=2&ved=2ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA" alt="Mushroom">
+    </div>
+    <div class="mushroom mushroom4">
+        <img src="https://www.google.com/imgres?q=transparent%20background%20amanita%20mushroom%20top-down&imgurl=https%3A%2F%2Fimages.rawpixel.com%2Fimage_png_800%2FcHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZyZmx5X2FnYXJpY19tdXNocm9vbV9yZWRfMy1pbWFnZS1qb2I4NzUtMDFfMS5wbmc.png&imgrefurl=https%3A%2F%2Fwww.rawpixel.com%2Fsearch%2Famanita%2520muscaria&docid=8Gp8ey2AITqBqM&tbnid=P75f-aFoB7LHnM&vet=12ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA..i&w=800&h=1000&hcb=2&ved=2ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA" alt="Mushroom">
+    </div>
+    <div class="mushroom mushroom5">
+        <img src="https://www.google.com/imgres?q=transparent%20background%20amanita%20mushroom%20top-down&imgurl=https%3A%2F%2Fimages.rawpixel.com%2Fimage_png_800%2FcHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZyZmx5X2FnYXJpY19tdXNocm9vbV9yZWRfMy1pbWFnZS1qb2I4NzUtMDFfMS5wbmc.png&imgrefurl=https%3A%2F%2Fwww.rawpixel.com%2Fsearch%2Famanita%2520muscaria&docid=8Gp8ey2AITqBqM&tbnid=P75f-aFoB7LHnM&vet=12ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA..i&w=800&h=1000&hcb=2&ved=2ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA" alt="Mushroom">
+    </div>
+    <div class="mushroom mushroom6">
+        <img src="https://www.google.com/imgres?q=transparent%20background%20amanita%20mushroom%20top-down&imgurl=https%3A%2F%2Fimages.rawpixel.com%2Fimage_png_800%2FcHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZyZmx5X2FnYXJpY19tdXNocm9vbV9yZWRfMy1pbWFnZS1qb2I4NzUtMDFfMS5wbmc.png&imgrefurl=https%3A%2F%2Fwww.rawpixel.com%2Fsearch%2Famanita%2520muscaria&docid=8Gp8ey2AITqBqM&tbnid=P75f-aFoB7LHnM&vet=12ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA..i&w=800&h=1000&hcb=2&ved=2ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA" alt="Mushroom">
+    </div>
+    <div class="mushroom mushroom7">
+        <img src="https://www.google.com/imgres?q=transparent%20background%20amanita%20mushroom%20top-down&imgurl=https%3A%2F%2Fimages.rawpixel.com%2Fimage_png_800%2FcHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZyZmx5X2FnYXJpY19tdXNocm9vbV9yZWRfMy1pbWFnZS1qb2I4NzUtMDFfMS5wbmc.png&imgrefurl=https%3A%2F%2Fwww.rawpixel.com%2Fsearch%2Famanita%2520muscaria&docid=8Gp8ey2AITqBqM&tbnid=P75f-aFoB7LHnM&vet=12ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA..i&w=800&h=1000&hcb=2&ved=2ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA" alt="Mushroom">
+    </div>
+    <div class="mushroom mushroom8">
+        <img src="https://www.google.com/imgres?q=transparent%20background%20amanita%20mushroom%20top-down&imgurl=https%3A%2F%2Fimages.rawpixel.com%2Fimage_png_800%2FcHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZyZmx5X2FnYXJpY19tdXNocm9vbV9yZWRfMy1pbWFnZS1qb2I4NzUtMDFfMS5wbmc.png&imgrefurl=https%3A%2F%2Fwww.rawpixel.com%2Fsearch%2Famanita%2520muscaria&docid=8Gp8ey2AITqBqM&tbnid=P75f-aFoB7LHnM&vet=12ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA..i&w=800&h=1000&hcb=2&ved=2ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA" alt="Mushroom">
+    </div>
+    <div class="mushroom mushroom9">
+        <img src="https://www.google.com/imgres?q=transparent%20background%20amanita%20mushroom%20top-down&imgurl=https%3A%2F%2Fimages.rawpixel.com%2Fimage_png_800%2FcHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZyZmx5X2FnYXJpY19tdXNocm9vbV9yZWRfMy1pbWFnZS1qb2I4NzUtMDFfMS5wbmc.png&imgrefurl=https%3A%2F%2Fwww.rawpixel.com%2Fsearch%2Famanita%2520muscaria&docid=8Gp8ey2AITqBqM&tbnid=P75f-aFoB7LHnM&vet=12ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA..i&w=800&h=1000&hcb=2&ved=2ahUKEwjAm77YoNiLAxVrD1kFHeMAMhcQM3oECG4QAA" alt="Mushroom">
+    </div>
+</div>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const mushrooms = document.querySelectorAll('.mushroom');
+        const scrollPosition = window.scrollY;
+        
+        // Adjust mushrooms as the user scrolls
+        mushrooms.forEach(function(mushroom, index) {
+            const mushroomOffset = 100 + (scrollPosition / (index + 1));
+            const scaleFactor = 1 + (scrollPosition / 1000);
+            mushroom.style.transform = `translateY(${mushroomOffset}px) scale(${scaleFactor})`;
+
+            // Add the "growing" effect when the scroll position reaches a certain point
+            if (scrollPosition > (index * 150)) {
+                mushroom.classList.add('growing');
+            } else {
+                mushroom.classList.remove('growing');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
