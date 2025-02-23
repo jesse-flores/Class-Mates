@@ -17,6 +17,8 @@ What motivated your team to choose this project? Are there bigger ideas or featu
 
 Tell us about a tricky bug and/or design challenge that you encountered. How did your team tackle it together?
 
+The tricky design challenge the team encountered is fetching data from a database for emails and passwords. This came in the form of learning a new language, SQL, and implementing it with frameworks such as Node.js. This was an extensive process in properly understanding the language and integrating it into the website for it to acquire the email and password databases. 
+
 
 
 
