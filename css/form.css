@@ -90,7 +90,7 @@ h1 {
     margin-left: 20px;
 } */
 .class-entry .survey{
-    background-color: RebeccaPurple;
+    background-color: slateblue;
     display: inline-block;
     width: 100px;
     height: 100px;
@@ -105,7 +105,7 @@ h1 {
     cursor: pointer;
 }
 .survey input[type=checkbox] + label {
-    background-color: Purple;
+    background-color: Plum;
 }
 
 
@@ -129,7 +129,7 @@ h1 {
 
 .progress-bar {
     width: 100%;
-    background-color: RebeccaPurple;
+    background-color: white;
     height: 8px;
     margin-bottom: 20px;
 }
@@ -137,7 +137,7 @@ h1 {
 .progress {
     width: 0;
     height: 100%;
-    background-color: Purple;
+    background-color: white;
 }
 
 .error {
