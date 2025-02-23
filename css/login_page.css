@@ -5,12 +5,12 @@ html{
 body {
     margin: 0;
     padding: 0;
-    background-color: Navy;
+    background-color: lightskyblue;
 }
 
 /* Header styles */
 header {
-    background-color: Purple;
+    background-color: slateblue;
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -86,12 +86,12 @@ header h1 {
     background-color: Purple;
 }
 .signUp_button{
-    background-color: #b4abff;
+    background-color: rebeccapurple;
     color: #333;
     text-decoration: none;
 }
 .signUp_button:hover{
-    background-color: RebeccaPurple;
+    background-color: purple;
     color:rgba(255, 255, 255, 0.795);
 }
 
