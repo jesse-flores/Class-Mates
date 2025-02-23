@@ -2,7 +2,7 @@ body {
   font-family:Georgia, 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: Navy;
 }
 
 .container {
@@ -10,7 +10,7 @@ body {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: Plum;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -44,7 +44,7 @@ table{
   /* border:none; */
 }
 .dropdown-list {
-  background: white;
+  background: Plum;
   position: absolute;
   width: 95%;
   max-height: 200px;
@@ -58,7 +58,7 @@ table{
 
 .category {
   padding: 8px;
-  background-color: #f0f0f0;
+  background-color: Purple;
   cursor: pointer;
 }
 
@@ -68,7 +68,7 @@ table{
 }
 
 .dropdown-item:hover {
-  background-color: #000000;
+  background-color: RebeccaPurple;
 }
 
 .dropdwn2{
