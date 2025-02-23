@@ -1,11 +1,11 @@
 Project: Class Mates
 Team name: Conquistadors
-Team members & contributions: 
+Team members & Contributions: 
 Dagbegnon Amouzou: Worked on the back-end function of storing data gained from the survey in a database.
-Carlos Tierra:
-Jesse Flores:
-Ariadne Colina Valeri:
-Geneva Chung:
+Carlos Tierra: Debugging Front-End Functionality as well as learning Back-End such as Javascript & SQL. 
+Jesse Flores: 
+Ariadne Colina Valeri: 
+Geneva Chung: 
 
 Goal: Our goal was to create a website that would help students find study partners in larger classess. We chose this project because we realized that, especially in higher level classes, its often hard to find someone to work and study with in the subject. Over the weekend we were able to get a working website with some missing functionality.
 
@@ -19,6 +19,5 @@ Tell us about a tricky bug and/or design challenge that you encountered. How did
 
 
 
-Tell us about one fun or interesting experience that you had with other hackers! Did you get coffee with new friends? Did you attend a workshop that inspired you?
-Did you meet someone new?
+
 
