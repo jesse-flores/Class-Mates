@@ -1,0 +1,166 @@
+<!-- Developed with aid of ChatGPT -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+</head>
+<body>
+
+<div class="survey-container">
+    <h2> Pairing Form</h2>
+    
+    <form id="survey-form">
+        <div class="question">
+            <p>1. How often do you like to take breaks during study sessions?
+            </p>
+            <ul class="answers">
+                <li><input type="radio" name="q1" value="30"> Every 30 minutes</li>
+                <li><input type="radio" name="q1" value="hour"> After an hour</li>
+                <li><input type="radio" name="q1" value="tired">  Only when feeling tired</li>
+            </ul>
+        </div>
+        
+        <div class="question">
+            <p>2. Do you like to study with music or complete silence?
+            </p>
+            <ul class="answers">
+                <li><input type="radio" name="q2" value="music"> With music</li>
+                <li><input type="radio" name="q2" value="silence"> Silence</li>
+             
+            </ul>
+        </div>
+
+        <div class="question">
+            <p>3.  How organized are you when it comes to study materials and notes? </p>
+            <ul class="answers">
+                <li><input type="radio" name="q3" value="Horganized"> Highly organized</li>
+                <li><input type="radio" name="q3" value="Sorganized">  Somewhat organized</li>
+                <li><input type="radio" name="q3" value="Disorganized"> Disorganized</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p>4. Do you prefer verbal explanations or visual aids when learning something new?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q4" value="Verbal"> Verbal</li>
+                <li><input type="radio" name="q4" value="Visual"> Visual</li>
+                <li><input type="radio" name="q4" value="Mix"> Mix</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p>5. How do you feel about asking questions during study sessions? </p>
+            <ul class="answers">
+                <li><input type="radio" name="q5" value="Often">  I ask often</li>
+                <li><input type="radio" name="q5" value="Conditional"> Only if I don't understand</li>
+                <li><input type="radio" name="q5" value="Rarely"> I rarely ask</li>
+            </ul>
+        </div>
+
+
+        <div class="question">
+            <p>6. How do you stay motivated when studying becomes tough?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q6" value="Break"> I take breaks</li>
+                <li><input type="radio" name="q6" value="Reward"> I set rewards for myself</li>
+                <li><input type="radio" name="q6" value="Push"> I push through without distractions</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p>7. How early do you start studying before a test or exam?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q7" value="Weeks"> Weeks ahead</li>
+                <li><input type="radio" name="q7" value="Days"> A few days before</li>
+                <li><input type="radio" name="q7" value="Night"> The night before</li>
+            </ul>
+        </div>
+    
+        
+        <div class="question">
+            <p>8. How do you deal with distractions when studying with others? </p>
+            <ul class="answers">
+                <li><input type="radio" name="q8" value="Focused"> I stay focused</li>
+                <li><input type="radio" name="q8" value="Quiet"> I ask for quiet</li>
+                <li><input type="radio" name="q8" value="Track"> I sometimes get distracted but get back on track</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p>9. How do you approach difficult subjects?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q9" value="Immediately"> I seek help immediately</li>
+                <li><input type="radio" name="q9" value="Own"> I try to figure it out on my own</li>
+                <li><input type="radio" name="q9" value="Necessary"> I avoid them until necessary</li>
+            </ul>
+        </div>
+
+         <div class="question">
+            <p>10. If you and your study partner disagree on the method to approach a problem, how would you handle it?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q410" value="Suggest"> I'd listen to their idea, then suggest my own</li>
+                <li><input type="radio" name="q10" value="Both"> I'd try both methods and see which works</li>
+                <li><input type="radio" name="q10" value="Method"> I'd stick with my method</li>
+            </ul>
+        </div>
+
+
+
+        <div class="question">
+            <p>11.  Is there anything you’re looking for in particular in your study buddy?</p>
+            <textarea name="q11" rows="4" style="width: 100%;" placeholder="Your answer..."></textarea>
+        </div>
+
+        <button type="button" onclick="storeResponses()">Submit</button>
+    </form>
+    
+    <div class="result" id="result"></div>
+    <div class="error-message" id="error-message"></div>
+</div>
+
+<script>
+    function storeResponses() {
+        // Collecting responses from the form
+        const formData = new FormData(document.getElementById('survey-form'));
+        const responses = {};
+        let allAnswered = true;
+
+        formData.forEach((value, key) => {
+            responses[key] = value;
+        });
+
+        // Check if all questions have been answered
+        if (!responses['q1'] || !responses['q2'] || !responses['q3']) {
+            allAnswered = false;
+        }
+
+        if (allAnswered) {
+            // Displaying the responses (for demo purposes)
+            let resultText = '<h3>Your Responses:</h3><ul>';
+            
+            for (const question in responses) {
+                resultText += `<li><strong>${question}:</strong> ${responses[question]}</li>`;
+            }
+            resultText += '</ul>';
+
+            document.getElementById('result').innerHTML = resultText;
+            document.getElementById('error-message').innerHTML = ''; // Clear any previous error message
+            
+            // You can send these responses to a server here if needed using fetch() or XMLHttpRequest
+            // Example:
+            // fetch('your-server-endpoint', { method: 'POST', body: formData });
+
+            // Optionally reset the form after submission
+            document.getElementById('survey-form').reset();
+        } else {
+            // Display error message if not all questions are answered
+            document.getElementById('error-message').innerHTML = 'Please answer all questions before submitting.';
+        }
+    }
+</script>
+
+</body>
+</html>
